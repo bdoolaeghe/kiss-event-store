@@ -9,7 +9,7 @@ A simple eventstore based on a Postgres DB
 2. import the library in your event sourced project :
 ```xml
 <dependency>
-    <groupId>fr.soat</groupId>
+    <groupId>com.bdoolaeghe</groupId>
     <artifactId>simple-event-store</artifactId>
     <version>1.0-SNAPSHOT</version>
 </dependency>
