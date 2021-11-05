@@ -1,6 +1,5 @@
 package com.bdoolaeghe.ses.impl;
 
-import com.google.common.annotations.VisibleForTesting;
 import com.bdoolaeghe.ses.api.EntityId;
 import com.bdoolaeghe.ses.api.Event;
 import com.bdoolaeghe.ses.api.EventStore;
@@ -21,7 +20,7 @@ public class DBEventStore<ENTITY_ID extends EntityId, EVENT_TYPE extends Event<?
 
     public static final String EMPTY_CONTENT = "empty-content";
 
-    private final JdbcTemplate jdbcTemplate;
+    protected final JdbcTemplate jdbcTemplate;
 
     private static final String SELECT =
             " SELECT ety.entity_id, "
@@ -45,9 +44,6 @@ public class DBEventStore<ENTITY_ID extends EntityId, EVENT_TYPE extends Event<?
             "INSERT INTO entity "
             + " (entity_id) VALUES (?)"
             + " ON CONFLICT DO NOTHING";
-
-    private static final String TRUNCATE_ENTITY = "TRUNCATE entity";
-    private static final String TRUNCATE_EVENT = "TRUNCATE event";
 
     public DBEventStore(DataSource dataSource) {
         this.jdbcTemplate = new JdbcTemplate(dataSource);
@@ -96,12 +92,6 @@ public class DBEventStore<ENTITY_ID extends EntityId, EVENT_TYPE extends Event<?
             });
         }
         return batchArgs;
-    }
-
-    @VisibleForTesting
-    public void clear() {
-        jdbcTemplate.execute(TRUNCATE_ENTITY);
-        jdbcTemplate.execute(TRUNCATE_EVENT);
     }
 
 }
