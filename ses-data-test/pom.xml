@@ -16,7 +16,7 @@
         <dependency>
             <groupId>com.bdoolaeghe</groupId>
             <artifactId>simple-event-store-data</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
+            <version>${project.version}</version>
         </dependency>
     </dependencies>
 

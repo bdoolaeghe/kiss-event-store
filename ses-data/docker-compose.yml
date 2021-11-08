@@ -4,4 +4,4 @@ postgres:
   ports:
     - "5432:5432"
   volumes:
-    - ./src/main/sql/:/docker-entrypoint-initdb.d/
+    - ./src/main/resources/db/:/docker-entrypoint-initdb.d/

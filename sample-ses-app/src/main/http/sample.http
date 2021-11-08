@@ -1,0 +1,7 @@
+### create a book
+POST http://localhost:8080/books?title=clean%20code
+Content-Type: application/json
+
+### get book
+GET http://localhost:8080/books/1
+Accept: application/json

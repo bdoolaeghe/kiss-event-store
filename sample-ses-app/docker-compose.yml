@@ -1,0 +1,5 @@
+postgres:
+  image: postgres:10.9
+  container_name: "pg_eventstore_sample"
+  ports:
+    - "5432:5432"
