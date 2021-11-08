@@ -2,6 +2,21 @@
 POST http://localhost:8080/books?title=clean%20code
 Content-Type: application/json
 
+> {%
+client.test("Request executed successfully", function() {
+   client.assert(response.status === 200, "Response status is not 200");
+   client.global.set('reference', response.body.reference.idValue);
+});
+%}
+
+### borrow the book
+POST http://localhost:8080/books/{{reference}}/borrow?borrower=Bob
+Content-Type: application/json
+
+### return the book
+POST http://localhost:8080/books/{{reference}}/return
+Content-Type: application/json
+
 ### get book
-GET http://localhost:8080/books/1
+GET http://localhost:8080/books/{{reference}}
 Accept: application/json

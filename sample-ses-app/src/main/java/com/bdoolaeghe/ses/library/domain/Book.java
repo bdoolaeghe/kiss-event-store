@@ -66,7 +66,7 @@ public class Book implements Entity<Reference, BookEvent> {
         if (this.title == null) {
             throw new UnsupportedOperationException("can not return book '" + this.reference + "' as it's not registered yet");
         }
-        if (! this.isAvailable) {
+        if (this.isAvailable) {
             throw new UnsupportedOperationException("can not return book '" + this.title + "' as it's not borrowed yet");
         }
 
