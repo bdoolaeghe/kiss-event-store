@@ -1,24 +1,12 @@
 package com.bdoolaeghe.ses.impl;
 
-import com.bdoolaeghe.ses.configuration.TestDbEventStoreConfiguration;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit.jupiter.SpringExtension;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
-import static org.assertj.core.api.Assertions.assertThat;
-
-@ExtendWith(SpringExtension.class)
-@ContextConfiguration(classes = {
-        TestDbEventStoreConfiguration.class
-})
-@Transactional
-class DBEventStoreIT {
+class DBEventStoreIT extends AbstractDbIT {
 
     @Autowired
     DBEventStore<SampleId, SampleEvent> dbEventStore;

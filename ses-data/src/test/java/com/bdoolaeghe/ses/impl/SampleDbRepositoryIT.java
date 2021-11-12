@@ -1,25 +1,15 @@
 package com.bdoolaeghe.ses.impl;
 
 import com.bdoolaeghe.ses.api.EventConcurrentUpdateException;
-import com.bdoolaeghe.ses.configuration.TestDbEventStoreConfiguration;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit.jupiter.SpringExtension;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Arrays;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
-@ExtendWith(SpringExtension.class)
-@ContextConfiguration(classes = {
-        TestDbEventStoreConfiguration.class
-})
-@Transactional
-class AbstractDbRepositoryIT {
+class SampleDbRepositoryIT extends AbstractDbIT {
 
     @Autowired
     SampleDbRepository repository;

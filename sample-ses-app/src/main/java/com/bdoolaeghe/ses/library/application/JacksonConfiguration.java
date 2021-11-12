@@ -20,6 +20,7 @@ public class JacksonConfiguration {
     @Primary
     public ObjectMapper objectMapper() {
         var mapper =  new ObjectMapper();
+        // just for better readability in sample REST responses
         mapper.addMixIn(BookEvent.class, BookEventMixin.class);
         return mapper;
     }
