@@ -20,7 +20,9 @@ It supports:
 ```shell
 # ./mvnw clean install
 ```
+
 For spring-boot application, check  the [sample-kiss-es-app](sample-kiss-es-app/) for an example of usage:
+
 3. import the `kiss-es-spring-boot-starter` in your event sourced project :
 ```xml
 <dependency>
@@ -28,7 +30,7 @@ For spring-boot application, check  the [sample-kiss-es-app](sample-kiss-es-app/
     <artifactId>kiss-es-spring-boot-starter</artifactId>    
 </dependency>
 ```
-4. Start a postgres DB, and configure your datasource in spring-boot `application.yml`, e.g.:
+4. Setup and start a postgres DB, and configure your datasource in spring-boot `application.yml`, e.g.:
 ```yaml
 spring:
   datasource:
