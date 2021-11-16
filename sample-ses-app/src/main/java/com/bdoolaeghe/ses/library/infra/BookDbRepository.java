@@ -7,6 +7,7 @@ import com.bdoolaeghe.ses.library.domain.BookEvent;
 import com.bdoolaeghe.ses.library.domain.Reference;
 import org.springframework.stereotype.Repository;
 
+import static com.bdoolaeghe.ses.library.domain.Reference.reference;
 import static java.util.Collections.emptyList;
 
 @Repository
@@ -18,7 +19,7 @@ public class BookDbRepository extends AbstractDbRepository<Reference, Book, Book
 
     @Override
     protected Reference newEntityId() {
-        return Reference.reference(super.generateEntityId());
+        return reference(super.generateEntityId());
     }
 
     @Override
