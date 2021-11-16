@@ -1,0 +1,22 @@
+### register book "clean code" in library
+POST http://localhost:8080/books?title=clean%20code
+Content-Type: application/json
+
+> {%
+client.test("Request executed successfully", function() {
+   client.assert(response.status === 200, "Response status is not 200");
+   client.global.set('reference', response.body.reference.idValue);
+});
+%}
+
+### Bob borrows the "clean code "book
+POST http://localhost:8080/books/{{reference}}/borrow?borrower=Bob
+Content-Type: application/json
+
+### Bob returns the "clean code "book
+POST http://localhost:8080/books/{{reference}}/return
+Content-Type: application/json
+
+### get "clean code" book status and history
+GET http://localhost:8080/books/{{reference}}
+Accept: application/json

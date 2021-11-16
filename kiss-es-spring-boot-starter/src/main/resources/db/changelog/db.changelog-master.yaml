@@ -1,0 +1,3 @@
+databaseChangeLog:
+  - include:
+      file: classpath:db/001_tablescreation_changelog.sql
