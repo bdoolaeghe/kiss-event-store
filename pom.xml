@@ -8,12 +8,12 @@
 		<version>2.5.6</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.bdoolaeghe</groupId>
-	<artifactId>simple-event-store</artifactId>
+	<groupId>org.kiss</groupId>
+	<artifactId>kiss-event-store</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
-	<name>simple-event-store</name>
-	<description>Simple event-store and dev tools, based on Postres DB</description>
+	<name>kiss-event-store</name>
+	<description>Keep It Simple Stupid Event Store, based on Postres DB</description>
 	<properties>
 		<java.version>17</java.version>
 		<lombok.version>1.18.22</lombok.version>
@@ -21,10 +21,10 @@
 	</properties>
 
 	<modules>
-		<module>ses-data</module>
-		<module>ses-data-test</module>
-		<module>ses-data-spring-boot-starter</module>
-		<module>sample-ses-app</module>
+		<module>kiss-es</module>
+		<module>kiss-es-test</module>
+		<module>kiss-es-spring-boot-starter</module>
+		<module>sample-kiss-es-app</module>
 	</modules>
 
 </project>
